@@ -1,0 +1,85 @@
+apiVersion: "serving.kserve.io/v1beta1"
+kind: "InferenceService"
+metadata:
+  name: "cat-classifier"
+spec:
+  predictor:
+    serviceAccountName: s3-read-only
+    model:
+      modelFormat:
+        name: pytorch
+      storageUri: s3://emlo-session22/cat-classifier/
+      # resources:
+      #   limits:
+      #     cpu: 2000m
+      # resources:
+      #   limits:
+      #     nvidia.com/gpu: 1
+
+---
+
+apiVersion: "serving.kserve.io/v1beta1"
+kind: "InferenceService"
+metadata:
+  name: "dog-classifier"
+spec:
+  predictor:
+    serviceAccountName: s3-read-only
+    model:
+      modelFormat:
+        name: pytorch
+      storageUri: s3://emlo-session22/dog-classifier/
+      # resources:
+      #   limits:
+      #     cpu: 2000m
+
+---
+
+apiVersion: "serving.kserve.io/v1beta1"
+kind: "InferenceService"
+metadata:
+  name: "food-classifier"
+spec:
+  predictor:
+    serviceAccountName: s3-read-only
+    model:
+      modelFormat:
+        name: pytorch
+      storageUri: s3://emlo-session22/food-classifier/
+      # resources:
+      #   limits:
+      #     cpu: 2000m
+
+---
+
+apiVersion: "serving.kserve.io/v1beta1"
+kind: "InferenceService"
+metadata:
+  name: "imagenet-vit"
+spec:
+  predictor:
+    serviceAccountName: s3-read-only
+    model:
+      modelFormat:
+        name: pytorch
+      storageUri: s3://emlo-session22/imagenet-vit/
+      # resources:
+      #   limits:
+      #     cpu: 2000m
+
+---
+
+apiVersion: "serving.kserve.io/v1beta1"
+kind: "InferenceService"
+metadata:
+  name: "vehicle-classifier"
+spec:
+  predictor:
+    serviceAccountName: s3-read-only
+    model:
+      modelFormat:
+        name: pytorch
+      storageUri: s3://emlo-session22/vehicle-classifier/
+      # resources:
+      #   limits:
+      #     cpu: 2000m
