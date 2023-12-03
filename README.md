@@ -177,7 +177,7 @@ k get ig
 ![Screenshot](images/postman.JPG)
 
 - Calculated the execution time on test.py script.
-![Screenshot](images/time.JPG)
+![Screenshot](images/Time.JPG)
 
 
 ## Group Members
