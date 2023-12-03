@@ -3,11 +3,9 @@
 Provide an base64 image to the model and it will do the classificition base on the multimodel inference graph
 
 ![Python](https://img.shields.io/badge/python-3.9-blue)
-![torch](https://img.shields.io/badge/torch-1.12.0-orange)
-![transformers](https://img.shields.io/badge/transformers-4.30.2-orange)
-![pillow](https://img.shields.io/badge/pillow-9.5.0-orange)
-![fastapi[all]](https://img.shields.io/badge/fastapi[all]-0.98.0-green)
-
+![torch](https://img.shields.io/badge/torch-2.1.0-orange)
+![transformers](https://img.shields.io/badge/transformers-4.35.0-orange)
+![torchvision](https://img.shields.io/badge/torchvision-0.16.0-orange)
 
 ## Objective 
 
@@ -44,6 +42,20 @@ Install all libraries:
 ```
 pip install -r requirements-torch.txt
 pip install -r requirements.txt
+```
+## Docker Installation
+```
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+sudo usermod -aG docker $USER
+```
+Note: You need to restart the instance sto use docker commands.
+
+## AWS CLI Setup
+```
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
 ```
 
 ## Create the MiniKube Cluster
@@ -96,6 +108,11 @@ k apply -f deployment/all-classifier.yaml
 Deploy KServe Inference Graphs:
 ```
 k apply -f deployment/ig.yaml
+```
+
+Exposing MiniKube to EC2 Public IP
+```
+minikube tunnel --bind-address 0.0.0.0
 ```
 
 ## Deploying on EKS
@@ -181,5 +198,5 @@ k get ig
 
 
 ## Group Members
-- Anurag Mittal
 - Aman Jaipuria
+- Anurag Mittal
